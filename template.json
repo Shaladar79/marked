@@ -8,7 +8,7 @@
           "rank": "Normal",
           "mark": "",
           "race": "",
-          "background": ""
+          "background": "",
           "currentSpirit": 0,
           "spentSpirit": 0,
           "totalSpirit": 0
@@ -43,17 +43,20 @@
           "vitality": {
             "label": "Vitality",
             "value": 0,
-            "max": 0
+            "max": 0,
+            "regen": 0
           },
           "mana": {
             "label": "Mana",
             "value": 0,
-            "max": 0
+            "max": 0,
+            "regen": 0
           },
           "stamina": {
             "label": "Stamina",
             "value": 0,
-            "max": 0
+            "max": 0,
+            "regen": 0
           },
           "defense": {
             "label": "Defense",
