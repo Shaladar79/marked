@@ -1,76 +1,82 @@
 <form class="marked sheet actor" autocomplete="off">
   <!-- HEADER -->
-  <header class="sheet-header flexrow">
-    <div class="profile">
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+<header class="sheet-header flexrow">
+  <div class="profile">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+  </div>
+
+  <div class="header-fields">
+    <!-- NAME -->
+    <div class="name-row">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
     </div>
 
-    <div class="header-fields">
-      <div class="name-row">
-        <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+    <!-- TYPE / RANK / MARK -->
+    <div class="meta-row flexrow">
+      <div class="field">
+        <label>Type</label>
+        <input type="text" value="{{actor.type}}" disabled />
       </div>
 
-      <div class="meta-row flexrow">
-        <div class="field">
-          <label>Type</label>
-          <input type="text" value="{{actor.type}}" disabled />
-        </div>
-
-        <div class="field">
-          <label>Rank</label>
-          <select name="system.details.rank">
-            {{#select system.details.rank}}
-              <option value="Normal">Normal</option>
-              <option value="Quartz">Quartz</option>
-              <option value="Topaz">Topaz</option>
-              <option value="Garnet">Garnet</option>
-              <option value="Emerald">Emerald</option>
-              <option value="Sapphire">Sapphire</option>
-              <option value="Ruby">Ruby</option>
-              <option value="Diamond">Diamond</option>
-              <option value="Mythrite">Mythrite</option>
-              <option value="Celestite">Celestite</option>
-            {{/select}}
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Mark</label>
-          <input type="text" name="system.details.mark" value="{{system.details.mark}}" />
-        </div>
+      <div class="field">
+        <label>Rank</label>
+        <select name="system.details.rank">
+          {{#select system.details.rank}}
+            <option value="Normal">Normal</option>
+            <option value="Quartz">Quartz</option>
+            <option value="Topaz">Topaz</option>
+            <option value="Garnet">Garnet</option>
+            <option value="Emerald">Emerald</option>
+            <option value="Sapphire">Sapphire</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Diamond">Diamond</option>
+            <option value="Mythrite">Mythrite</option>
+            <option value="Celestite">Celestite</option>
+          {{/select}}
+        </select>
       </div>
 
-      <div class="meta-row flexrow">
-        <div class="field">
-          <label>Race</label>
-          <input type="text" name="system.details.race" value="{{system.details.race}}" placeholder="Race / Origin" />
-        </div>
-
-        <div class="field">
-          <label>Background</label>
-          <input type="text" name="system.details.background" value="{{system.details.background}}" placeholder="Background" />
-        </div>
-      </div>
-
-      <!-- SPIRIT ROW -->
-      <div class="meta-row flexrow">
-        <div class="field">
-          <label>Current Spirit</label>
-          <input type="number" name="system.details.currentSpirit" value="{{system.details.currentSpirit}}" />
-        </div>
-
-        <div class="field">
-          <label>Spent Spirit</label>
-          <input type="number" name="system.details.spentSpirit" value="{{system.details.spentSpirit}}" />
-        </div>
-
-        <div class="field">
-          <label>Total Spirit</label>
-          <input type="number" name="system.details.totalSpirit" value="{{system.details.totalSpirit}}" />
-        </div>
+      <div class="field">
+        <label>Mark</label>
+        <input type="text" name="system.details.mark" value="{{system.details.mark}}" />
       </div>
     </div>
-  </header>
+
+    <!-- RACE / BACKGROUND -->
+    <div class="meta-row flexrow">
+      <div class="field">
+        <label>Race</label>
+        <input type="text" name="system.details.race" value="{{system.details.race}}" placeholder="Race / Origin" />
+      </div>
+
+      <div class="field">
+        <label>Background</label>
+        <input type="text" name="system.details.background" value="{{system.details.background}}" placeholder="Background" />
+      </div>
+    </div>
+
+    <!-- SPIRIT (Current / Spent / Total [Derived]) -->
+    <div class="meta-row flexrow">
+      <div class="field">
+        <label>Current Spirit</label>
+        <input type="number" name="system.details.currentSpirit" value="{{system.details.currentSpirit}}" />
+      </div>
+
+      <div class="field">
+        <label>Spent Spirit</label>
+        <input type="number" name="system.details.spentSpirit" value="{{system.details.spentSpirit}}" />
+      </div>
+
+      <div class="field">
+        <label>Total Spirit</label>
+        <!-- Derived, read-only -->
+        <input type="number" value="{{system.details.totalSpirit}}" disabled />
+      </div>
+    </div>
+
+  </div>
+</header>
+
 
   <!-- TABS -->
   <nav class="sheet-tabs tabs" data-group="primary">
