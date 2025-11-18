@@ -10,7 +10,32 @@
           "race": "",
           "background": ""
         },
-        "attributes": {},
+        "attributes": {
+          "body": {
+            "label": "Body",
+            "value": 0,
+            "sub1": { "label": "Body Sub 1", "value": 0 },
+            "sub2": { "label": "Body Sub 2", "value": 0 },
+            "sub3": { "label": "Body Sub 3", "value": 0 },
+            "sub4": { "label": "Body Sub 4", "value": 0 }
+          },
+          "mind": {
+            "label": "Mind",
+            "value": 0,
+            "sub1": { "label": "Mind Sub 1", "value": 0 },
+            "sub2": { "label": "Mind Sub 2", "value": 0 },
+            "sub3": { "label": "Mind Sub 3", "value": 0 },
+            "sub4": { "label": "Mind Sub 4", "value": 0 }
+          },
+          "soul": {
+            "label": "Soul",
+            "value": 0,
+            "sub1": { "label": "Soul Sub 1", "value": 0 },
+            "sub2": { "label": "Soul Sub 2", "value": 0 },
+            "sub3": { "label": "Soul Sub 3", "value": 0 },
+            "sub4": { "label": "Soul Sub 4", "value": 0 }
+          }
+        },
         "status": {}
       }
     }
