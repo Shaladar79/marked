@@ -14,26 +14,26 @@
           "body": {
             "label": "Body",
             "value": 0,
-            "sub1": { "label": "Body Sub 1", "value": 0 },
-            "sub2": { "label": "Body Sub 2", "value": 0 },
-            "sub3": { "label": "Body Sub 3", "value": 0 },
-            "sub4": { "label": "Body Sub 4", "value": 0 }
+            "might":      { "label": "Might",      "value": 0 },
+            "swiftness":  { "label": "Swiftness",  "value": 0 },
+            "fortitude":  { "label": "Fortitude",  "value": 0 },
+            "endurance":  { "label": "Endurance",  "value": 0 }
           },
           "mind": {
             "label": "Mind",
             "value": 0,
-            "sub1": { "label": "Mind Sub 1", "value": 0 },
-            "sub2": { "label": "Mind Sub 2", "value": 0 },
-            "sub3": { "label": "Mind Sub 3", "value": 0 },
-            "sub4": { "label": "Mind Sub 4", "value": 0 }
+            "insight":   { "label": "Insight",   "value": 0 },
+            "quickness": { "label": "Quickness", "value": 0 },
+            "willpower": { "label": "Willpower", "value": 0 },
+            "focus":     { "label": "Focus",     "value": 0 }
           },
           "soul": {
             "label": "Soul",
             "value": 0,
-            "sub1": { "label": "Soul Sub 1", "value": 0 },
-            "sub2": { "label": "Soul Sub 2", "value": 0 },
-            "sub3": { "label": "Soul Sub 3", "value": 0 },
-            "sub4": { "label": "Soul Sub 4", "value": 0 }
+            "presence":  { "label": "Presence",  "value": 0 },
+            "grace":     { "label": "Grace",     "value": 0 },
+            "resolve":   { "label": "Resolve",   "value": 0 },
+            "resonance": { "label": "Resonance", "value": 0 }
           }
         },
         "status": {}
@@ -50,4 +50,6 @@
       }
     }
   }
+}
+
 }
