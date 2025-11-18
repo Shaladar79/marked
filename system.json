@@ -1,1 +1,33 @@
+{
+  "id": "marked-system",
+  "title": "The Marked System",
+  "description": "Custom game system for The Marked in Foundry VTT v13.",
+  "version": "0.0.0.1",
+  "authors": [
+    {
+      "name": "Shaladar"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": ["system.mjs"],
+  "styles": ["styles.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "scripts": [],
+  "socket": false,
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
 
