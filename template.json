@@ -9,7 +9,7 @@
           "mark": "",
           "race": "",
           "background": "",
-          "currentSpirit": 0,
+          "currentSpirit": "0",
           "spentSpirit": 0,
           "totalSpirit": 0
         },
