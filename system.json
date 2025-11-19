@@ -1,5 +1,5 @@
 {
-  "id": "Marked",
+  "id": "marked",
   "title": "The Marked System",
   "type": "system",
   "description": "Custom game system for The Marked in Foundry VTT v13.",
@@ -29,7 +29,7 @@
     "distance": 5,
     "units": "ft"
   },
-  "url": "https://github.com/Shaladar79/Marked",
-  "manifest": "https://raw.githubusercontent.com/Shaladar79/Marked/main/system.json",
-  "download": "https://github.com/Shaladar79/Marked/archive/refs/heads/main.zip"
+  "url": "https://github.com/Shaladar79/marked",
+  "manifest": "https://raw.githubusercontent.com/Shaladar79/marked/main/system.json",
+  "download": "https://github.com/Shaladar79/marked/archive/refs/heads/main.zip"
 }
