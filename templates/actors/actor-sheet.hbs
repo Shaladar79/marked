@@ -5,41 +5,41 @@
 
   {{!-- TOP-LEVEL TABS --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="attrStatus">Attributes &amp; Status</a>
+    <a class="item" data-tab="attr-status">Attributes &amp; Status</a>
     <a class="item" data-tab="abilities">Abilities</a>
   </nav>
 
   <section class="sheet-body">
-    {{!-- ================================
-         TAB: ATTRIBUTES & STATUS (TOP)
-         ================================= --}}
-    <div class="tab" data-group="primary" data-tab="attrStatus">
 
-      {{!-- SUBTABS inside Attributes & Status --}}
-      <nav class="sheet-subtabs tabs" data-group="sub">
+    {{!-- =========================
+         ATTRIBUTES & STATUS TAB
+         ========================= --}}
+    <div class="tab" data-group="primary" data-tab="attr-status">
+
+      {{!-- Subtabs inside this tab --}}
+      <nav class="sub-tabs tabs" data-group="sub">
         <a class="item" data-tab="attributes">Attributes</a>
         <a class="item" data-tab="status">Status</a>
       </nav>
 
-      <section class="attributes-status-body">
-        {{!-- SUBTAB: ATTRIBUTES --}}
+      <section class="sub-body">
         <div class="tab" data-group="sub" data-tab="attributes">
           {{> "systems/the-marked-system/templates/actors/parts/attributes.hbs"}}
         </div>
 
-        {{!-- SUBTAB: STATUS --}}
         <div class="tab" data-group="sub" data-tab="status">
           {{> "systems/the-marked-system/templates/actors/parts/status.hbs"}}
         </div>
       </section>
+
     </div>
 
-    {{!-- ================================
-         TAB: ABILITIES (TOP)
-         ================================= --}}
+    {{!-- =========================
+         ABILITIES TAB (placeholder)
+         ========================= --}}
     <div class="tab" data-group="primary" data-tab="abilities">
       <h2>Abilities</h2>
-      <p>TODO: Abilities tab content will go here.</p>
+      <p>Abilities UI coming soon…</p>
     </div>
 
   </section>
