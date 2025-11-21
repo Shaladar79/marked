@@ -1,1 +1,87 @@
+{{!-- templates/actors/parts/header.hbs --}}
+
+<header class="sheet-header flexrow">
+  <div class="profile">
+    <img class="profile-img"
+         src="{{actor.img}}"
+         data-edit="img"
+         title="{{actor.name}}" />
+  </div>
+
+  <div class="header-fields">
+
+    {{!-- NAME --}}
+    <div class="name-row">
+      <input name="name"
+             type="text"
+             value="{{actor.name}}"
+             placeholder="Name" />
+    </div>
+
+    {{!-- TYPE / RANK / MARK --}}
+    <div class="meta-row flexrow">
+
+      <div class="field">
+        <label>Type</label>
+        <input type="text" value="{{actor.type}}" disabled />
+      </div>
+
+      {{!-- RANK DROPDOWN (modular partial) --}}
+      {{> "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"}}
+
+      <div class="field">
+        <label>Mark</label>
+        <input type="text"
+               name="system.details.mark"
+               value="{{system.details.mark}}" />
+      </div>
+    </div>
+
+    {{!-- RACE / BACKGROUND (still text fields until we modularize them) --}}
+    <div class="meta-row flexrow">
+
+      <div class="field">
+        <label>Race</label>
+        <input type="text"
+               name="system.details.race"
+               value="{{system.details.race}}"
+               placeholder="Race / Origin" />
+      </div>
+
+      <div class="field">
+        <label>Background</label>
+        <input type="text"
+               name="system.details.background"
+               value="{{system.details.background}}"
+               placeholder="Background" />
+      </div>
+    </div>
+
+    {{!-- SPIRIT FIELDS --}}
+    <div class="meta-row flexrow">
+
+      <div class="field">
+        <label>Current Spirit</label>
+        <input type="number"
+               name="system.details.currentSpirit"
+               value="{{system.details.currentSpirit}}" />
+      </div>
+
+      <div class="field">
+        <label>Spent Spirit</label>
+        <input type="number"
+               name="system.details.spentSpirit"
+               value="{{system.details.spentSpirit}}" />
+      </div>
+
+      <div class="field">
+        <label>Total Spirit</label>
+        <input type="number"
+               value="{{system.details.totalSpirit}}"
+               disabled />
+      </div>
+    </div>
+
+  </div>
+</header>
 
