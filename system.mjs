@@ -46,6 +46,8 @@ Hooks.once("setup", async function () {
   "systems/the-marked-system/templates/actors/parts/status.hbs",
   "systems/the-marked-system/templates/actors/parts/tabs.hbs",
   "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs",
-  "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"
+  "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs",
+  "systems/the-marked-system/templates/actors/parts/subparts/tribedrop.hbs",
+  "systems/the-marked-system/templates/actors/parts/subparts/clandrop.hbs"
 ]);
 });
