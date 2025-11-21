@@ -1,37 +1,24 @@
 // scripts/config.mjs
 
-// Single config object for The Marked System
-export const MarkedConfig = {
+export const MarkedConfig = {};
 
-  // ------------------------------
-  // Core Attribute Groups
-  // ------------------------------
-  attributes: {
-    body: { label: "Body" },
-    mind: { label: "Mind" },
-    soul: { label: "Soul" }
-  },
+// Attribute categories
+MarkedConfig.attributes = {
+  body: { label: "Body" },
+  mind: { label: "Mind" },
+  soul: { label: "Soul" }
+};
 
-  // ------------------------------
-  // Rank List
-  // ------------------------------
-  // Keys are stored values in system.details.rank
-  // Values are the labels shown in the dropdown
-  ranks: {
-    normal:   "Normal",
-    quartz:   "Quartz",
-    topaz:    "Topaz",
-    garnet:   "Garnet",
-    emerald:  "Emerald",
-    sapphire: "Sapphire",
-    ruby:     "Ruby",
-    diamond:  "Diamond",
-    mythrite: "Mythrite",
-    celestite:"Celestite"
-  }
-
-  // Later:
-  // races: { ... },
-  // backgrounds: { ... },
-  // marks: { ... }
+// Rank list — clean, proper structure
+MarkedConfig.ranks = {
+  normal:   { key: "normal",   label: "Normal" },
+  quartz:   { key: "quartz",   label: "Quartz" },
+  topaz:    { key: "topaz",    label: "Topaz" },
+  garnet:   { key: "garnet",   label: "Garnet" },
+  emerald:  { key: "emerald",  label: "Emerald" },
+  sapphire: { key: "sapphire", label: "Sapphire" },
+  ruby:     { key: "ruby",     label: "Ruby" },
+  diamond:  { key: "diamond",  label: "Diamond" },
+  mythrite: { key: "mythrite", label: "Mythrite" },
+  celestite:{ key: "celestite",label: "Celestite" }
 };
