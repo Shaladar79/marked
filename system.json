@@ -3,7 +3,7 @@
   "title": "The Marked System",
   "type": "system",
   "description": "Custom game system for The Marked in Foundry VTT v13.",
-  "version": "0.0.1.5",
+  "version": "0.0.1.6",
   "authors": [
     {
       "name": "Shaladar"
