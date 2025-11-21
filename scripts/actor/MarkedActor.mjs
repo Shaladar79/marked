@@ -4,8 +4,8 @@ export class MarkedActor extends Actor {
   prepareDerivedData() {
     super.prepareDerivedData();
 
-    // System data shortcut
-    const system = this.system ?? {};
+    // System data shortcut (NO FALLBACK)
+    const system = this.system;
 
     // Ensure details exists
     if (!system.details) system.details = {};
@@ -19,6 +19,6 @@ export class MarkedActor extends Actor {
     details.totalSpirit = current + spent;
 
     // Later: compute Parry, Toughness, Essence slots, Mark effects, etc.
-    // For now, Spirit total is the only derived value.
   }
 }
+
