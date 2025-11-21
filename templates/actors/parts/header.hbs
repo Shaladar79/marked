@@ -39,14 +39,10 @@
 
         {{!-- RANK via partial --}}
         {{> "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"}}
+        
+         {{!-- RACE via partial --}}
+       {{> "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"}}
 
-        <div class="field">
-          <label>Race</label>
-          <input type="text"
-                 name="system.details.race"
-                 value="{{system.details.race}}"
-                 placeholder="Race / Origin" />
-        </div>
 
         <div class="field">
           <label>Background</label>
