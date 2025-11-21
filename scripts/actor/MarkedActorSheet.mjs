@@ -3,26 +3,43 @@
 import { MarkedConfig } from "../config.mjs";
 
 export class MarkedActorSheet extends ActorSheet {
+
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["marked", "sheet", "actor"],
       template: "systems/the-marked-system/templates/actors/actor-sheet.hbs",
       width: 900,
       height: 700,
+
       tabs: [
-        // Top-level tabs: "Attributes & Status" and "Abilities"
+        // ---------------------------
+        // TOP-LEVEL TABS
+        // ---------------------------
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
           initial: "attr-status"
         },
-        // Inner subtabs inside the Attributes & Status tab
+
+        // ---------------------------
+        // SUBTABS: Attributes & Status
+        // ---------------------------
         {
           navSelector: ".sub-tabs",
           contentSelector: ".sub-body",
           initial: "attributes"
+        },
+
+        // ---------------------------
+        // SUBTABS: Abilities (Marks)
+        // ---------------------------
+        {
+          navSelector: ".abilities-subtabs",
+          contentSelector: ".abilities-subbody",
+          initial: "marks"
         }
       ],
+
       submitOnChange: true,
       submitOnClose: true
     });
@@ -31,7 +48,6 @@ export class MarkedActorSheet extends ActorSheet {
   getData(options) {
     const context = super.getData(options);
 
-    // Give partials direct access to system and config
     context.system = context.data.system;
     context.config = MarkedConfig;
 
@@ -41,7 +57,9 @@ export class MarkedActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // ----- Race-dependent extra dropdowns -----
+    // --------------------------------
+    // RACE-DEPENDENT EXTRA DROPDOWNS
+    // --------------------------------
     const raceSelect = html.find('select[name="system.details.race"]');
     const tribeField = html.find(".tribe-field");
     const clanField  = html.find(".clan-field");
@@ -49,7 +67,7 @@ export class MarkedActorSheet extends ActorSheet {
     const updateRaceDependentFields = () => {
       const race = raceSelect.val();
 
-      // Mythrian → show tribe, hide clan
+      // Mythrian → show Tribe
       if (race === "mythrian") {
         tribeField.show();
       } else {
@@ -57,7 +75,7 @@ export class MarkedActorSheet extends ActorSheet {
         this.object.update({ "system.details.tribe": "" });
       }
 
-      // Draconian → show clan, hide tribe
+      // Draconian → show Clan
       if (race === "draconian") {
         clanField.show();
       } else {
@@ -66,10 +84,7 @@ export class MarkedActorSheet extends ActorSheet {
       }
     };
 
-    // Initial state
     updateRaceDependentFields();
-
-    // Live update when race changes
     raceSelect.on("change", updateRaceDependentFields);
   }
 }
