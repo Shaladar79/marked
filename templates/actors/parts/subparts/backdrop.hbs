@@ -1,1 +1,9 @@
+{{!-- templates/actors/parts/subparts/backdrop.hbs --}}
+
+<div class="field background-field">
+  <label>Background</label>
+  <select name="system.details.background" data-dtype="String">
+    {{selectOptions config.backgrounds selected=system.details.background}}
+  </select>
+</div>
 
