@@ -91,3 +91,8 @@
   font-weight: bold;
   padding: 4px 6px;
 }
+
+/* Hide all race-dependent dropdowns (tribe/clan) by default */
+.marked .race-dependent {
+  display: none;
+}
