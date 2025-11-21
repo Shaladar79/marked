@@ -1,36 +1,37 @@
 // scripts/config.mjs
 
 // Single config object for The Marked System
-export const MarkedConfig = {};
+export const MarkedConfig = {
 
-// ------------------------------
-// Core Attribute Groups
-// ------------------------------
-MarkedConfig.attributes = {
-  body: { label: "Body" },
-  mind: { label: "Mind" },
-  soul: { label: "Soul" }
+  // ------------------------------
+  // Core Attribute Groups
+  // ------------------------------
+  attributes: {
+    body: { label: "Body" },
+    mind: { label: "Mind" },
+    soul: { label: "Soul" }
+  },
+
+  // ------------------------------
+  // Rank List
+  // ------------------------------
+  // Keys are stored values in system.details.rank
+  // Values are the labels shown in the dropdown
+  ranks: {
+    normal:   "Normal",
+    quartz:   "Quartz",
+    topaz:    "Topaz",
+    garnet:   "Garnet",
+    emerald:  "Emerald",
+    sapphire: "Sapphire",
+    ruby:     "Ruby",
+    diamond:  "Diamond",
+    mythrite: "Mythrite",
+    celestite:"Celestite"
+  }
+
+  // Later:
+  // races: { ... },
+  // backgrounds: { ... },
+  // marks: { ... }
 };
-
-// ------------------------------
-// Rank List
-// ------------------------------
-// Keys are the stored values (system.details.rank)
-// "label" is what the user sees in the dropdown
-MarkedConfig.ranks = {
-  normal:   { label: "Normal"   },
-  quartz:   { label: "Quartz"   },
-  topaz:    { label: "Topaz"    },
-  garnet:   { label: "Garnet"   },
-  emerald:  { label: "Emerald"  },
-  sapphire: { label: "Sapphire" },
-  ruby:     { label: "Ruby"     },
-  diamond:  { label: "Diamond"  },
-  mythrite: { label: "Mythrite" },
-  celestite:{ label: "Celestite"}
-};
-
-// Later we can add:
-// MarkedConfig.races = { ... };
-// MarkedConfig.backgrounds = { ... };
-// MarkedConfig.marks = { ... };
