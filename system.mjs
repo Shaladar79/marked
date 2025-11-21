@@ -40,11 +40,12 @@ Hooks.once("init", function () {
 Hooks.once("setup", async function () {
   console.log("Marked System | Preloading templates");
 
-  await loadTemplates([
-    "systems/the-marked-system/templates/actors/parts/header.hbs",
-    "systems/the-marked-system/templates/actors/parts/attributes.hbs",
-    "systems/the-marked-system/templates/actors/parts/status.hbs",
-    "systems/the-marked-system/templates/actors/parts/tabs.hbs",
-    "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"
-  ]);
+ await loadTemplates([
+  "systems/the-marked-system/templates/actors/parts/header.hbs",
+  "systems/the-marked-system/templates/actors/parts/attributes.hbs",
+  "systems/the-marked-system/templates/actors/parts/status.hbs",
+  "systems/the-marked-system/templates/actors/parts/tabs.hbs",
+  "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs",
+  "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"
+]);
 });
