@@ -85,7 +85,7 @@ MarkedConfig.backgrounds = {
 };
 
 // Marks of Purpose
-MarkedConfig.marksOfPurpose = {
+MarkedConfig.markOfPurpose = {
   guardian:   "Guardian",
   defender:   "Defender",
   arcanist:   "Arcanist",
