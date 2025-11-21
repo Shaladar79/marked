@@ -29,5 +29,37 @@ export class MarkedActorSheet extends ActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+
+    const raceSelect = html.find('select[name="system.details.race"]');
+    const tribeField = html.find('.tribe-field');
+    const clanField  = html.find('.clan-field');
+
+    const updateRaceDependentFields = () => {
+      const race = raceSelect.val();
+
+      // Mythrian → show tribe, hide clan
+      if (race === "mythrian") {
+        tribeField.show();
+      } else {
+        tribeField.hide();
+        // Optional: clear stored tribe when not Mythrian
+        this.object.update({ "system.details.tribe": "" });
+      }
+
+      // Draconian → show clan, hide tribe
+      if (race === "draconian") {
+        clanField.show();
+      } else {
+        clanField.hide();
+        // Optional: clear stored clan when not Draconian
+        this.object.update({ "system.details.clan": "" });
+      }
+    };
+
+    // Initial state when sheet opens
+    updateRaceDependentFields();
+
+    // Live update when race changes
+    raceSelect.on("change", () => updateRaceDependentFields());
   }
 }
