@@ -1,1 +1,9 @@
+{{!-- templates/actors/parts/subparts/tribedrop.hbs --}}
+
+<div class="field tribe-field race-dependent" data-race="mythrian">
+  <label>Tribe</label>
+  <select name="system.details.tribe" data-dtype="String">
+    {{selectOptions config.mythrianTribes selected=system.details.tribe}}
+  </select>
+</div>
 
