@@ -13,18 +13,21 @@ MarkedConfig.attributes = {
 // Rank list (Option A)
 // Keys are capitalized so they match your current default "Normal"
 // stored at system.details.rank in template.json
+export const MarkedConfig = {};
+
 MarkedConfig.ranks = {
-  Normal:    { label: "Normal" },
-  Quartz:    { label: "Quartz" },
-  Topaz:     { label: "Topaz" },
-  Garnet:    { label: "Garnet" },
-  Emerald:   { label: "Emerald" },
-  Sapphire:  { label: "Sapphire" },
-  Ruby:      { label: "Ruby" },
-  Diamond:   { label: "Diamond" },
-  Mythrite:  { label: "Mythrite" },
-  Celestite: { label: "Celestite" }
+  normal: { key: "normal", label: "Normal" },
+  quartz: { key: "quartz", label: "Quartz" },
+  topaz: { key: "topaz", label: "Topaz" },
+  garnet: { key: "garnet", label: "Garnet" },
+  emerald: { key: "emerald", label: "Emerald" },
+  sapphire: { key: "sapphire", label: "Sapphire" },
+  ruby: { key: "ruby", label: "Ruby" },
+  diamond: { key: "diamond", label: "Diamond" },
+  mythrite: { key: "mythrite", label: "Mythrite" },
+  celestite: { key: "celestite", label: "Celestite" }
 };
+
 
 // Later we can add:
 // MarkedConfig.races = { ... }
