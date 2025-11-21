@@ -32,5 +32,11 @@ Hooks.once("init", function () {
   Items.registerSheet("marked", MarkedItemSheet, {
     makeDefault: true
   });
+   // 🔹 PRELOAD PARTIAL TEMPLATES 🔹
+  await loadTemplates([
+    "systems/the-marked-system/templates/actors/parts/header.hbs",
+    "systems/the-marked-system/templates/actors/parts/attributes.hbs",
+    "systems/the-marked-system/templates/actors/parts/status.hbs",
+    "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"
 });
 
