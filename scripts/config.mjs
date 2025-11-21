@@ -84,8 +84,19 @@ MarkedConfig.backgrounds = {
   explorer:      "Explorer"
 };
 
-// MARKS (for now just Mark of Purpose)
+// -------------------------------------
+// MARK OF PURPOSE OPTIONS
+// -------------------------------------
 MarkedConfig.marks = {
-  none: "None",
-  purpose: "Mark of Purpose"
+  none:       "None",
+  guardian:   "Guardian",
+  defender:   "Defender",
+  arcanist:   "Arcanist",
+  charlatan:  "Charlatan",
+  brawler:    "Brawler",
+  striker:    "Striker",
+  pious:      "Pious",
+  ranger:     "Ranger",
+  skirmisher: "Skirmisher",
+  assassin:   "Assassin"
 };
