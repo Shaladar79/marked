@@ -1,11 +1,93 @@
-.marked.sheet .sheet-header {
+/* ================================
+   HEADER LAYOUT + PORTRAIT STYLING
+   ================================ */
+
+.marked-sheet .sheet-header {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
-.marked .profile-img {
-  border: 2px solid #000;
-  max-width: 64px;
-  max-height: 64px;
+/* --- TOP ROW: TYPE ABOVE PORTRAIT --- */
+.marked-sheet .header-top-row {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
 }
 
+.marked-sheet .type-field input.type-display {
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  color: var(--color-text-light, #ddd);
+  pointer-events: none;
+  padding: 0;
+}
+
+/* --- MAIN ROW: PORTRAIT + DETAILS --- */
+.marked-sheet .header-main-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* --- PORTRAIT --- */
+.marked-sheet .profile {
+  flex: 0 0 auto;
+  width: 140px;          /* BIGGER */
+  height: 140px;         /* BIGGER */
+  border: 2px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #222;
+}
+
+.marked-sheet .profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* --- RIGHT SIDE FIELDS --- */
+.marked-sheet .header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.marked-sheet .meta-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.marked-sheet .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.marked-sheet .field label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: var(--color-text-dark, #bbb);
+}
+
+.marked-sheet .field input,
+.marked-sheet .field select {
+  height: 24px;
+  padding: 2px 4px;
+  font-size: 14px;
+}
+
+/* Make name box look clean & large */
+.marked-sheet .name-row input {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 4px 6px;
+}
