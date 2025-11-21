@@ -1,10 +1,12 @@
 // scripts/actor/MarkedActorSheet.mjs
 
+import { MarkedConfig } from "../config.mjs";
+
 export class MarkedActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["marked", "sheet", "actor"],
-      template: "systems/marked/templates/actor/actor-sheet.hbs",
+      template: "systems/the-marked-system/templates/actors/actor-sheet.hbs",
       width: 900,
       height: 700,
       tabs: [
@@ -15,8 +17,10 @@ export class MarkedActorSheet extends ActorSheet {
 
   getData(options) {
     const data = super.getData(options);
-    data.config = game.marked?.config;
+
+    // Expose our config so templates can access it via {{config}}
+    data.config = MarkedConfig;
+
     return data;
   }
 }
-
