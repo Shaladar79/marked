@@ -244,3 +244,78 @@ MarkedConfig.raceStatus = {
     }
   }
 };
+
+// RACE Attribute Modifiers
+// These are % bonuses applied on top of the character's assigned sub-attributes.
+MarkedConfig.raceAttributes = {
+  "Human": {
+    "body.might": 2,
+    "body.swiftness": 2,
+    "mind.insight": 2,
+    "mind.willpower": 2,
+    "soul.presence": 2,
+    "soul.resolve": 2
+  },
+  "Etherean": {
+    "mind.insight": 2,
+    "mind.focus": 2,
+    "soul.grace": 4,
+    "soul.resonance": 4
+  },
+  "Mythrian": {
+    "body.might": 4,
+    "body.swiftness": 2,
+    "body.endurance": 4,
+    "mind.insight": 2
+  },
+  "Anthozoan": {
+    "body.might": 2,
+    "body.fortitude": 4,
+    "body.endurance": 4,
+    "soul.resolve": 2
+  },
+  "Sylvan": {
+    "body.swiftness": 4,
+    "body.endurance": 2,
+    "mind.insight": 2,
+    "soul.grace": 4
+  },
+  "Sprite": {
+    "body.swiftness": 4,
+    "mind.insight": 2,
+    "mind.quickness": 2,
+    "soul.grace": 4
+  },
+  "Auramine": {
+    "mind.insight": 2,
+    "soul.presence": 4,
+    "soul.grace": 2,
+    "soul.resonance": 4
+  },
+  "Draconian": {
+    "body.might": 4,
+    "body.fortitude": 4,
+    "body.endurance": 2,
+    "soul.presence": 2
+  },
+  "Embergiest": {
+    "body.endurance": 2,
+    "mind.focus": 2,
+    "soul.presence": 2,
+    "soul.resolve": 4,
+    "soul.resonance": 2
+  },
+  "Earthen": {
+    "body.might": 2,
+    "body.fortitude": 4,
+    "body.endurance": 4,
+    "mind.willpower": 2
+  },
+  "Prismatic": {
+    "mind.focus": 4,
+    "mind.quickness": 2,
+    "soul.resonance": 4,
+    "soul.presence": 2
+  }
+};
+
