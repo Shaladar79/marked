@@ -60,16 +60,16 @@ export class MarkedActorSheet extends ActorSheet {
     // --------------------------------
     // RACE-DEPENDENT EXTRA DROPDOWNS
     // --------------------------------
-    const raceSelect = html.find('select[name="system.details.race"]');
+       const raceSelect = html.find('select[name="system.details.race"]');
     const tribeField = html.find(".tribe-field");
     const clanField  = html.find(".clan-field");
 
     // Show/hide tribe/clan based on race
     const updateRaceDependentFields = () => {
-      const race = raceSelect.val();
+      const raceKey = raceSelect.val(); // e.g. "human", "mythrian"
 
       // Mythrian → show Tribe
-      if (race === "mythrian") {
+      if (raceKey === "mythrian") {
         tribeField.show();
       } else {
         tribeField.hide();
@@ -77,7 +77,7 @@ export class MarkedActorSheet extends ActorSheet {
       }
 
       // Draconian → show Clan
-      if (race === "draconian") {
+      if (raceKey === "draconian") {
         clanField.show();
       } else {
         clanField.hide();
@@ -85,44 +85,61 @@ export class MarkedActorSheet extends ActorSheet {
       }
     };
 
-    // Apply racial status values when the race changes
-    const applyRaceStatus = () => {
-      const raceKey = raceSelect.val();       // e.g. "human", "etherean"
+    // Apply racial STATUS + ATTRIBUTE bonuses when race changes
+    const applyRaceData = () => {
+      const raceKey = raceSelect.val(); // "human", "etherean", etc.
       if (!raceKey) return;
 
       // Convert key → label, e.g. "human" → "Human"
-      const raceLabel  = MarkedConfig.races?.[raceKey] ?? raceKey;
-      const raceConfig = MarkedConfig.raceStatus?.[raceLabel];
-      if (!raceConfig || !raceConfig.status) return;
+      const raceLabel = MarkedConfig.races?.[raceKey] ?? raceKey;
+
+      const raceStatus     = MarkedConfig.raceStatus?.[raceLabel];
+      const raceAttributes = MarkedConfig.raceAttributes?.[raceLabel];
 
       const update = {};
 
-      // Copy racial status into system.status.*
-      for (const [path, value] of Object.entries(raceConfig.status)) {
-        update[`system.status.${path}`] = value;
+      // 1) STATUS: copy racial status into system.status.*
+      if (raceStatus && raceStatus.status) {
+        for (const [path, value] of Object.entries(raceStatus.status)) {
+          update[`system.status.${path}`] = value;
+        }
+
+        // Optionally set current = max for V/M/S on race selection
+        if (raceStatus.status["vitality.max"] !== undefined) {
+          update["system.status.vitality.value"] = raceStatus.status["vitality.max"];
+        }
+        if (raceStatus.status["mana.max"] !== undefined) {
+          update["system.status.mana.value"] = raceStatus.status["mana.max"];
+        }
+        if (raceStatus.status["stamina.max"] !== undefined) {
+          update["system.status.stamina.value"] = raceStatus.status["stamina.max"];
+        }
       }
 
-      // Optionally set current to max for vitality / mana / stamina on selection
-      if (raceConfig.status["vitality.max"] !== undefined) {
-        update["system.status.vitality.value"] = raceConfig.status["vitality.max"];
+      // 2) ATTRIBUTES: apply racial modifiers to sub-attributes
+      if (raceAttributes) {
+        for (const [path, bonus] of Object.entries(raceAttributes)) {
+          // path like "body.might" → system.attributes.body.might.value
+          const attrPath = `system.attributes.${path}.value`;
+          const current  = foundry.utils.getProperty(this.actor.system, attrPath) ?? 0;
+          update[attrPath] = Number(current) + Number(bonus);
+        }
       }
-      if (raceConfig.status["mana.max"] !== undefined) {
-        update["system.status.mana.value"] = raceConfig.status["mana.max"];
-      }
-      if (raceConfig.status["stamina.max"] !== undefined) {
-        update["system.status.stamina.value"] = raceConfig.status["stamina.max"];
-      }
+
+      // Also store the race key itself (already bound to the dropdown)
+      update["system.details.race"] = raceKey;
 
       this.object.update(update);
     };
 
-    // On initial render, just fix tribe/clan visibility
+    // On initial render, just adjust tribe/clan visibility
     updateRaceDependentFields();
 
-    // On change, update tribe/clan AND apply racial status
+    // When race changes: update tribe/clan visibility AND apply racial data
     raceSelect.on("change", () => {
       updateRaceDependentFields();
-      applyRaceStatus();
+      applyRaceData();
     });
+
   }
 }
